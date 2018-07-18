@@ -34,7 +34,7 @@
 			<!-- 移除嵌入式tomcat插件 -->
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
+			<scope>provided</scope><!--打成jar包时去掉此配置-->
 		</dependency>
 	</dependencies>
 	<build>
