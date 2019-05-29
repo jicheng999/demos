@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="pers.ljc.interview.tanmer.dao.ILawyerDao" >
+
+    <insert id="insert" parameterType="pers.ljc.interview.tanmer.domain.Lawyer">
+        insert into lawyer
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                id,
+            </if>
+            <if test="lawyerName != null" >
+                lawyer_name,
+            </if>
+            <if test="status != null" >
+                status,
+            </if>
+            <if test="barNumber != null" >
+                bar_number,
+            </if>
+            <if test="city != null" >
+                city,
+            </if>
+            <if test="admissionDate != null" >
+                admission_date,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="id != null" >
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="lawyerName != null" >
+                #{lawyerName,jdbcType=VARCHAR},
+            </if>
+            <if test="status != null" >
+                #{status,jdbcType=VARCHAR},
+            </if>
+            <if test="barNumber != null" >
+                #{barNumber,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null" >
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="admissionDate != null" >
+                #{admissionDate,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+
+
+    <select id="selectAll" resultType="pers.ljc.interview.tanmer.domain.Lawyer">
+      SELECT * FROM lawyer
+    </select>
+  
+</mapper>
